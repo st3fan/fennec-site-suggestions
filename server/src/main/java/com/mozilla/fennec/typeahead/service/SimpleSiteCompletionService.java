@@ -29,7 +29,6 @@ public class SimpleSiteCompletionService implements SiteCompletionService
     {
         try
         {
-
             InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("alexa.csv");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input, Charset.forName("UTF-8")));
 
@@ -53,7 +52,7 @@ public class SimpleSiteCompletionService implements SiteCompletionService
     }
 
     @Override
-    public List<Site> complete(String prefix)
+    public List<Site> complete(String prefix, int n)
     {
         SortedMap<String, Site> map = trie.getPrefixedBy(prefix);
         List<Site> sites = new ArrayList<Site>(map.values());
@@ -65,6 +64,6 @@ public class SimpleSiteCompletionService implements SiteCompletionService
             }
         });
 
-        return sites;
+        return sites.subList(0, n);
     }
 }

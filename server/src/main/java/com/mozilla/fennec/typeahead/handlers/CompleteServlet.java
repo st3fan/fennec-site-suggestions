@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
@@ -23,16 +22,18 @@ public class CompleteServlet extends HttpServlet
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        // Get a list of 5 sites
         String prefix = request.getParameter("q").toLowerCase();
-        List<SiteCompletionService.Site> results = siteCompletionService.complete(prefix);
+        List<SiteCompletionService.Site> sites = siteCompletionService.complete(prefix, 5);
 
-        List<String> result = new ArrayList<String>(5);
-        for (int i = 0; i < Math.min(5, results.size()); i++) {
-            result.add(results.get(i).getName());
+       // Return just a very basic JSON array of site names
+        String siteNames[] = new String[sites.size()];
+        for (int i = 0; i < sites.size(); i++) {
+            siteNames[i] = sites.get(i).getName();
         }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         response.setContentType("application/json");
-        response.getWriter().println(gson.toJson(result));
+        response.getWriter().println(gson.toJson(siteNames));
     }
 }

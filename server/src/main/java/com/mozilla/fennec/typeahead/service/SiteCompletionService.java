@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface SiteCompletionService
 {
-    public List<Site> complete(String prefix);
+    public List<Site> complete(String prefix, int n);
 
     public static class Site
     {
