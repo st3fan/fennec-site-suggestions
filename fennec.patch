@@ -1,0 +1,64 @@
+diff -r fcc533f691e9 mobile/android/app/mobile.js
+--- a/mobile/android/app/mobile.js	Thu Aug 30 21:32:16 2012 -0700
++++ b/mobile/android/app/mobile.js	Fri Aug 31 14:06:55 2012 -0400
+@@ -244,7 +244,7 @@
+ pref("browser.search.updateinterval", 6);
+ 
+ // disable search suggestions by default
+-pref("browser.search.suggest.enabled", false);
++pref("browser.search.suggest.enabled", true);
+ 
+ // Tell the search service to load search plugins from the locale JAR
+ pref("browser.search.loadFromJars", true);
+diff -r fcc533f691e9 mobile/android/base/SuggestClient.java
+--- a/mobile/android/base/SuggestClient.java	Thu Aug 30 21:32:16 2012 -0700
++++ b/mobile/android/base/SuggestClient.java	Fri Aug 31 14:06:55 2012 -0400
+@@ -69,7 +69,7 @@
+             String encoded = URLEncoder.encode(query, "UTF-8");
+             String suggestUri = mSuggestTemplate.replace("__searchTerms__", encoded);
+ 
+-            URL url = new URL(suggestUri);
++            URL url = new URL("http://ec2-184-169-208-112.us-west-1.compute.amazonaws.com:8086/complete?q=" + URLEncoder.encode(query, "UTF-8"));
+             String json = null;
+             HttpURLConnection urlConnection = null;
+             InputStream in = null;
+@@ -96,11 +96,10 @@
+                  * Sample result:
+                  * ["foo",["food network","foothill college","foot locker",...]]
+                  */
+-                JSONArray results = new JSONArray(json);
+-                JSONArray jsonSuggestions = results.getJSONArray(1);
+-                
++                JSONArray jsonSuggestions = new JSONArray(json);
++
+                 int added = 0;
+-                for (int i = 0; (i < jsonSuggestions.length()) && (added < mMaxResults); i++) {
++                for (int i = 0; (i < jsonSuggestions.length()) && (added < 5); i++) {
+                     String suggestion = jsonSuggestions.getString(i);
+                     if (!suggestion.equalsIgnoreCase(query)) {
+                         suggestions.add(suggestion);
+diff -r fcc533f691e9 mobile/android/base/awesomebar/AllPagesTab.java
+--- a/mobile/android/base/awesomebar/AllPagesTab.java	Thu Aug 30 21:32:16 2012 -0700
++++ b/mobile/android/base/awesomebar/AllPagesTab.java	Fri Aug 31 14:06:55 2012 -0400
+@@ -43,7 +43,7 @@
+ import java.io.IOException;
+ import java.util.ArrayList;
+ 
+-public class AllPagesTab extends AwesomeBarTab implements GeckoEventListener {
++public class  AllPagesTab extends AwesomeBarTab implements GeckoEventListener {
+     public static final String LOGTAG = "ALL_PAGES";
+     private static final String TAG = "allPages";
+ 
+@@ -371,7 +371,11 @@
+                     AwesomeBarTabs.OnUrlOpenListener listener = getUrlListener();
+                     if (listener != null) {
+                         String suggestion = ((TextView) v.findViewById(R.id.suggestion_text)).getText().toString();
+-                        listener.onSearch(engine.name, suggestion);
++                        if (suggestion.contains(".")) {
++                            listener.onUrlOpen("http://" + suggestion);
++                        } else {
++                            listener.onSearch(engine.name, suggestion);
++                        }
+                     }
+                 }
+             };
