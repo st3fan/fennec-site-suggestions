@@ -7,7 +7,7 @@ This is a proof of concept change to Firefox for Android to implement site name 
 
 I think this is specially useful on mobile where you want to go to your destination with as little clicks and keypresses as possible. The awesomebar does a really good job for that, but not so much when you start with a clean profile. Which is likely a very common case for Firefox for Android users.
 
-This demo is not perfect and put together in just a couple of hours but it is a good proof of concept i think.
+This demo is not perfect and put together in just a couple of hours but it is a good proof of concept i think. Many popular sites just need one or two characters to show up.
 
 Implementation
 --------------
@@ -47,4 +47,4 @@ Challenges
 
 * Getting high quality data; The Alexa Top Million Sites list is a good start but it is unfiltered and global. It will be a challenge to acquire or collect high quality top-sites data for different countries. This data can possibly be extracted from anonymized DNS dumps if ISPs are willing to work with us.
 * Hosting this is obviously always an interesting task. But this service would not be mission critical. If the API does not respond then there would simply be no suggestions. The user can still type a destination and go there of course.
-* 
+
