@@ -4,6 +4,8 @@ What is this?
 
 This is a proof of concept change to Firefox for Android to implement site name suggestions.
 
+[<img src="https://moo.mx/stuff/Suggestions.png">]()
+
 I think this is specially useful on mobile where you want to go to your destination with as little clicks and keypresses as possible. The awesomebar does a really good job for that, but not so much when you start with a clean profile. Which is likely a very common case for Firefox for Android users.
 
 Implementation
@@ -18,6 +20,11 @@ On the Android side I took the easy route to implement this and simply replaced 
 The code for the server and the change to Firefox for Android are included, as well as a development build that should run on your device if you allow installs from unknown sources.
 
 As of August 31, 2012 the service is also deployed on EC2 and the build in this repository points to that. That server will not be online forever but it is easy to run your own.
+
+* Download the demo build at [https://moo.mx/stuff/fennec-18.0a1.en-US.android-arm.apk](https://moo.mx/stuff/fennec-18.0a1.en-US.android-arm.apk)
+* Play with the API at [http://ec2-184-169-208-112.us-west-1.compute.amazonaws.com:8086/complete?q=fli](http://ec2-184-169-208-112.us-west-1.compute.amazonaws.com:8086/complete?q=fli)
+
+(Both might go down but this repository has the code)
 
 
 Advantages of doing this on the server
