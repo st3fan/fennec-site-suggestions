@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/103/trunk/src/main/java/org/ardverk/collection
+END
+CharacterKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/CharacterKeyAnalyzer.java
+END
+PatriciaTrieBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/102/trunk/src/main/java/org/ardverk/collection/PatriciaTrieBase.java
+END
+IntegerKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/IntegerKeyAnalyzer.java
+END
+Cursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/85/trunk/src/main/java/org/ardverk/collection/Cursor.java
+END
+ShortKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/85/trunk/src/main/java/org/ardverk/collection/ShortKeyAnalyzer.java
+END
+LongKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/LongKeyAnalyzer.java
+END
+PatriciaTrie.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/102/trunk/src/main/java/org/ardverk/collection/PatriciaTrie.java
+END
+ByteArrayKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/ByteArrayKeyAnalyzer.java
+END
+AbstractKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/99/trunk/src/main/java/org/ardverk/collection/AbstractKeyAnalyzer.java
+END
+ByteKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/ByteKeyAnalyzer.java
+END
+StringKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/98/trunk/src/main/java/org/ardverk/collection/StringKeyAnalyzer.java
+END
+Tries.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/102/trunk/src/main/java/org/ardverk/collection/Tries.java
+END
+AbstractTrie.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/100/trunk/src/main/java/org/ardverk/collection/AbstractTrie.java
+END
+CharArrayKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/103/trunk/src/main/java/org/ardverk/collection/CharArrayKeyAnalyzer.java
+END
+BigIntegerKeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/100/trunk/src/main/java/org/ardverk/collection/BigIntegerKeyAnalyzer.java
+END
+KeyAnalyzer.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/95/trunk/src/main/java/org/ardverk/collection/KeyAnalyzer.java
+END
+Trie.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/102/trunk/src/main/java/org/ardverk/collection/Trie.java
+END
